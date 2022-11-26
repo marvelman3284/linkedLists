@@ -1,3 +1,5 @@
+package shah.jeevan;
+
 public class Node<T> {
 
     public T data;
