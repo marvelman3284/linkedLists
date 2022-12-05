@@ -10,6 +10,19 @@ public class LinkedList<T> {
         destroy();
     }
 
+    public LinkedList(LinkedList linkedList) {
+        this.destroy();
+        for (int i = 0; i < linkedList.length(); i++) {
+            this.add((T)linkedList.get(i));
+        }
+    }
+
+    public LinkedList(T[] array) {
+        if (array != null) {
+            fromArray(array);
+        }
+    }
+
     public final void destroy() {
         length = 0;
         head = tail = null;
@@ -169,6 +182,10 @@ public class LinkedList<T> {
         }
     }
 
+    public void add(T data) {
+        insertTail(data);
+    }
+
     private boolean inRange(int index) {
         if (isEmpty() || index < 0 || index >= length) {
             return false;
@@ -232,7 +249,7 @@ public class LinkedList<T> {
     }
 
     public int length() {
-        return length();
+        return length;
     }
 
     public T get(int index) {

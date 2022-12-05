@@ -6,6 +6,10 @@ public class Queue<T> extends LinkedList {
         super();
     }
 
+    public Queue(LinkedList linkedList) {
+        super(linkedList);
+    }
+
     public void enqueue(T data) {
         super.insertTail(data);
     }

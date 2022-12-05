@@ -5,6 +5,10 @@ public class Stack<T> extends LinkedList {
         super();
     }
 
+    public Stack(LinkedList linkedList) {
+        super(linkedList);
+    }
+
     public void push(T data) {
         super.insertTail(data);
     }
